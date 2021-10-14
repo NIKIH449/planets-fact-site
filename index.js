@@ -87,6 +87,7 @@ function addPlanet(planet) {
   container.innerHTML = ''
   container.append(planet)
 }
+
 function openMenu() {
   popup.classList.add('popup_opened')
   buttonMenu.classList.add('header__button-menu_disabled')
@@ -99,19 +100,9 @@ function closeMenu() {
   buttonMenu.removeEventListener('click', closeMenu);
 }
 
-function activateLink(link) {
-  document.querySelector('.header__menu-link_active').classList.remove('header__menu-link_active')
-  document.querySelector(link).classList.add('header__menu-link_active')
-}
-
-function activateMobileLink(link) {
-  document.querySelector('.planet__button-mobile-link_active').classList.remove('planet__button-mobile-link_active')
-  document.querySelector(link).classList.add('planet__button-mobile-link_active')
-}
-
-function activateButton(button) {
-  document.querySelector('.planet__button_active').classList.remove('planet__button_active')
-  document.querySelector(button).classList.add('planet__button_active')
+function activateElement(element, elementActive) {
+  document.querySelector(`.${elementActive}`).classList.remove(elementActive)
+  document.querySelector(element).classList.add(elementActive)
 }
 
 function getStructureData(arr) {
@@ -146,33 +137,33 @@ function getSurfaceData(arr) {
 function setEventListeners(arr) {
   this._buttonMobileStructure.addEventListener('click', () => {
     getStructureData(arr)
-    activateMobileLink('.planet__button-mobile-link_type_structure')
+    activateElement('.planet__button-mobile-link_type_structure', 'planet__button-mobile-link_active')
   })
   this._buttonStructure.addEventListener('click', () => {
     getStructureData(arr)
-    activateButton('.planet__button_type_structure')
+    activateElement('.planet__button_type_structure', 'planet__button_active')
   })
   this._buttonOverview.addEventListener('click', () => {
     getOverviewData(arr)
-    activateButton('.planet__button_type_overview')
+    activateElement('.planet__button_type_overview', 'planet__button_active')
   })
   this._buttonMobileOverview.addEventListener('click', () => {
     getOverviewData(arr)
-    activateMobileLink('.planet__button-mobile-link_type_overview')
+    activateElement('.planet__button-mobile-link_type_overview', 'planet__button-mobile-link_active')
   })
   this._buttonSurface.addEventListener('click', () => {
     getSurfaceData(arr)
-    activateButton('.planet__button_type_surface')
+    activateElement('.planet__button_type_surface', 'planet__button_active')
   })
   this._buttonMobileSurface.addEventListener('click', () => {
     getSurfaceData(arr)
-    activateMobileLink('.planet__button-mobile-link_type_surface')
+    activateElement('.planet__button-mobile-link_type_surface', 'planet__button-mobile-link_active')
   })
 }
 
 function showPlanet(arr, planet) {
   generatePlanet(arr)
-  activateLink(`.header__menu-link_type_${planet}`)
+  activateElement(`.header__menu-link_type_${planet}`, 'header__menu-link_active')
 }
 
 buttonMenu.addEventListener('click', openMenu)

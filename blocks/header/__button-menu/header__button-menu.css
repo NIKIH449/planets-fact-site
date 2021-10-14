@@ -13,7 +13,7 @@
     background-image: url(../../../images/icon-hamburger.svg);
     background-color: black;
     cursor: pointer;
-    transition: 0.5 linear;
+    transition: 0.2s linear;
   }
 }
 
