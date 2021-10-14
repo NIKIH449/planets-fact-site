@@ -1,0 +1,23 @@
+.planet__facts {
+  display: flex;
+  margin: 88px auto 0 auto;
+  justify-content: center;
+  max-width: 1439px;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__facts {
+    max-width: 768px;
+    margin: 27px auto 0 auto;
+    padding-left: 35px;
+    justify-content: start
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__facts {
+    max-width: 375px;
+    flex-direction: column;
+    padding-left: 24px;
+  }
+}

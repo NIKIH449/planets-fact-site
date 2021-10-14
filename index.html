@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./pages/styles.css">
+  <title>PLANETS</title>
+</head>
+<body>
+  <div class="page">
+    <section class="header">
+      <a class="header__logo" href="#">THE PLANETS</a>
+      <nav class="header__navigation">
+        <ul class="header__menu">
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_mercury header__menu-link_active">MERCURY</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_venus">VENUS</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_earth">EARTH</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_mars">MARS</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_jupiter">JUPITER</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_saturn">SATURN</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_uranus">URANUS</a></li>
+          <li class="header__menu-item"><a class="header__menu-link header__menu-link_type_neptune">NEPTUNE</a></li>
+        </ul>
+      </nav>
+      <button class="header__button-menu"></button>
+    </section>
+    <div class="main">
+      <section class="planet">
+      </section>
+    </div>
+    <footer class="footer">
+      <p class="footer__copyright">Nikita Druzhevskii 2021</p>
+    </footer>
+    <template class="planet__template" id="planet__template">
+      <div class="planet__box">
+        <div class="planet__buttons-mobile">
+          <button class="planet__button-mobile"><a class="planet__button-mobile-link planet__button-mobile-link_type_overview planet__button-mobile-link_active">OVERVIEW</a></button>
+          <button class="planet__button-mobile"><a class="planet__button-mobile-link planet__button-mobile-link_type_structure">STRUCTURE</a></button>
+          <button class="planet__button-mobile"><a class="planet__button-mobile-link planet__button-mobile-link_type_surface">SURFACE<</a></button>
+        </div>
+          <div class="planet__container">
+            <div class="planet__pictures" style="display: flex;">
+              <img src="./images/geology-mercury.png" alt="Mercury" class="planet__picture_type_geology">
+              <img src="./images/planet-mercury.svg" alt="Mercury" class="planet__picture planet__picture_type_structure">
+            </div>
+          <div class="planet__general">
+            <div class="planet__info ">
+              <h1 class="planet__name"></h1>
+              <p class="planet__description"></p>
+              <p class="planet__source">Source: <a href="https://en.wikipedia.org/wiki/Mercury_(planet)" target="_blank" class="planet__link">Wikipedia
+                <img src="./images/icon-source.svg" alt="Wikipedia" class="planet__link-pic"></a></p>
+            </div>
+            <div class="planet__buttons">
+              <button class="planet__button planet__button_type_overview planet__button_active"><p class="planet__button-number">01</p><p class="planet__button-name">OVERVIEW</p></button>
+              <button class="planet__button planet__button_type_structure"><p class="planet__button-number">02</p><p class="planet__button-name">INTERNAL STRUCTURE</p></button>
+              <button class="planet__button planet__button_type_surface"><p class="planet__button-number">03</p><p class="planet__button-name">SURFACE GEOLOGY</p></button>
+            </div>
+          </div>
+        </div>
+        <div class="planet__facts">
+          <div class="planet__fact">
+            <p class="planet__fact-name planet__fact-name_type_rotation">ROTATION TIME</p>
+            <p class="planet__fact-info planet__fact-name_type_rotation-value"></p>
+          </div>
+          <div class="planet__fact">
+            <p class="planet__fact-name planet__fact-name_type_revolution">REVOLUTION TIME</p>
+            <p class="planet__fact-info planet__fact-name_type_revolution-value"></p>
+          </div>
+          <div class="planet__fact">
+            <p class="planet__fact-name planet__fact-name_type_radius">RADIUS</p>
+            <p class="planet__fact-info planet__fact-name_type_radius-value"></p>
+          </div>
+          <div class="planet__fact">
+            <p class="planet__fact-name planet__fact-name_type_temp">AVERAGE TEMP.</p>
+            <p class="planet__fact-info planet__fact-name_type_temp-value"></p>
+          </div>
+        </div>
+      </div>
+    </template>
+    <div class="popup">
+      <ul class="popup__list">
+        <li class="popup__item popup__item_type_mercury">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_mercury"></div>
+            <p class="popup__item-name">MERCURY</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_venus">
+        <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_venus"></div>
+            <p class="popup__item-name">VENUS</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_earth">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_earth"></div>
+            <p class="popup__item-name">EARTH</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_mars">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_mars"></div>
+            <p class="popup__item-name">MARS</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_jupiter">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_jupiter"></div>
+            <p class="popup__item-name">JUPITER</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_saturn">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_saturn"></div>
+            <p class="popup__item-name">SATURN</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_uranus">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_uranus"></div>
+            <p class="popup__item-name">URANUS</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+        <li class="popup__item popup__item_type_neptune">
+          <div class="popup__item-container">
+            <div class="popup__item-icon popup__item-icon_type_neptune"></div>
+            <p class="popup__item-name">NEPTUNE</p>
+          </div>
+          <button class="popup__item-arrow"></button>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript" src="./index.js"></script>
+</body>
+</html>

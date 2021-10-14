@@ -1,0 +1,10 @@
+@media screen and (max-width: 1239px) {
+  .planet__info {
+    margin-right: 68px;
+  }
+}
+@media screen and (max-width: 786px) {
+  .planet__info {
+    margin-right: 0;
+  }
+}

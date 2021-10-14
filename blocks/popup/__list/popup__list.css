@@ -1,0 +1,14 @@
+@media screen and (max-width: 786px) {
+  .popup__list {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    background-color: #070724;
+    font-family: SpartanBold;
+    font-size: 15px;
+    line-height: 25px;
+    text-align: center;
+    letter-spacing: 1.36364px;
+    color: #FFFFFF;
+  }
+}

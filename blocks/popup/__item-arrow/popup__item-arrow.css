@@ -1,0 +1,12 @@
+@media screen and (max-width: 786px) {
+  .popup__item-arrow {
+    width: 6px;
+    height: 9px;
+    border: none;
+    background-color: transparent;
+    background-image: url(../../../images/path.svg);
+    background-repeat: no-repeat;
+    padding: 0;
+    cursor: pointer;
+  }
+}

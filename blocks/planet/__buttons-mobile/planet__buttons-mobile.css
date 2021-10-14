@@ -1,0 +1,13 @@
+.planet__buttons-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 786px) {
+  .planet__buttons-mobile {
+    display: block;
+    max-width: 375px;
+    margin: 0 auto;
+    display: flex;
+    border-bottom: 1px solid rgba(255,255,255, 0.2);
+  }
+}

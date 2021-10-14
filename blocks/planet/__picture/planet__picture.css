@@ -1,0 +1,23 @@
+.planet__picture {
+  width: 290px;
+  height: 290px;
+  margin: auto auto;
+  padding: 40px 0 0 64px;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__picture {
+    width: 184px;
+    height: 184px;
+    padding: 78px 0 0 2px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__picture {
+    max-width: 375px;
+    width: 111px;
+    height: 111px;
+    padding: 27px 0 0 0px;
+  }
+}

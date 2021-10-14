@@ -1,0 +1,5 @@
+@media screen and (max-width: 786px) {
+  .popup__item-name {
+    margin: 0;
+  }
+}

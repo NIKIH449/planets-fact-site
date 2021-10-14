@@ -1,0 +1,18 @@
+.planet__general {
+  margin: 66px 163px 0 30px;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__general {
+    display: flex;
+    margin: 134px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__general {
+    display: flex;
+    flex-direction: column;
+    margin: 101px auto 0 auto;
+  }
+}

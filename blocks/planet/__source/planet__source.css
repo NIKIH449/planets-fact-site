@@ -1,0 +1,21 @@
+.planet__source {
+  font-family: SpartanRegular;
+  font-size: 0.875rem;
+  line-height: 1.56rem;
+  color: #FFFFFF;
+  opacity: 0.5;
+  margin: 0 0 38px 0;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__source {
+    font-size: 12px;
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__source {
+    margin-left: 84px;
+  }
+}

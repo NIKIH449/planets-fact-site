@@ -1,0 +1,29 @@
+.planet__picture_type_geology {
+  width: 163px;
+  height: 199px;
+  opacity: 0;
+  position: relative;
+  top: 396px;
+  left: 291px;
+  transition: visibility .3s, opacity .3s linear;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__picture_type_geology {
+    width: 110px;
+    height: 135px;
+    position: relative;
+    top: 218px;
+    left: 170px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__picture_type_geology {
+    width: 72px;
+    height: 85px;
+    position: relative;
+    top: 109px;
+    left: 90px;
+  }
+}

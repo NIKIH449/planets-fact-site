@@ -1,0 +1,24 @@
+.header__menu {
+  margin: 0;
+  padding: 33px 0 0 0;
+  list-style: none;
+  font-family: SpartanBold;
+  font-size: 0.7rem;
+  line-height: 1.6rem;
+  display: flex;
+  opacity: .75;
+  letter-spacing: 0.9px;
+}
+
+@media screen and (max-width: 1239px) {
+  .header__menu {
+    padding: 39px 0 27px 0;
+    margin-left: 38px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .header__menu {
+    display: none;
+  }
+}

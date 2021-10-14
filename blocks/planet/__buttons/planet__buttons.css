@@ -1,0 +1,16 @@
+.planet__buttons {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__buttons {
+    margin-top: 52px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__buttons {
+    display: none;
+  }
+}

@@ -1,0 +1,25 @@
+.planet__name {
+  font-family: AntonioRegular;
+  font-size: 5rem;
+  line-height: 6.5rem;
+  color: #FFFFFF;
+  margin: 0 0 16px 0;
+  width: 263px;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__name {
+    font-size: 48px;
+    line-height: 62px;
+    margin: 0 0 20px 0;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__name {
+    text-align: center;
+    margin: 0 auto 12px auto;
+    font-size: 40px;
+    line-height: 52px;
+  }
+}

@@ -1,0 +1,19 @@
+.header__button-menu {
+  display: none;
+}
+
+@media screen and (max-width: 786px) {
+  .header__button-menu {
+    margin: 26px 24px 0 0;
+    border: none;
+    display: block;
+    width: 24px;
+    height: 17px;
+    padding: 0;
+    background-image: url(../../../images/icon-hamburger.svg);
+    background-color: black;
+    cursor: pointer;
+    transition: 0.5 linear;
+  }
+}
+

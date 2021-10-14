@@ -1,0 +1,17 @@
+.planet__pictures {
+  display: flex;
+  margin-right: 272px;
+  margin-left: 106px;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__pictures {
+    margin-left: 162px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__pictures {
+    margin-left: 62px;
+  }
+}

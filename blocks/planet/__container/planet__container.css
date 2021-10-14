@@ -1,0 +1,11 @@
+.planet__container {
+  display: flex;
+  margin: 68px auto 0 auto;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__container {
+    flex-direction: column;
+    margin: 68px auto 0 auto
+  }
+}

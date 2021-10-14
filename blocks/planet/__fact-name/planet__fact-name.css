@@ -1,0 +1,24 @@
+.planet__fact-name {
+  font-family: SpartanBold;
+  font-size: 0.69rem;
+  line-height: 1.56rem;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  opacity: .5;
+  margin: 0 0 6px 0;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__fact-name {
+    font-size: 8px;
+    line-height: 1rem;
+    letter-spacing: .7px;
+    margin: 14px 0 0 15px;
+  }
+}
+
+@media screen and (max-width: 786px) {
+  .planet__fact-name {
+    margin: 17px 0 0 22px;
+  }
+}

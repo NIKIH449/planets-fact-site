@@ -1,0 +1,35 @@
+.planet__button {
+  height: 48px;
+  background-color: transparent;
+  font-family: SpartanBold;
+  font-size: 0.75rem;
+  line-height: 	1.56rem;
+  letter-spacing: 2.5px;
+  color: #FFFFFF;
+  text-align: left;
+  padding: 11px 0 0 27px;
+  margin: 0 0 16px;
+  display: flex;
+  border: 1px solid rgba(255,255,255, .2);
+  cursor: pointer;
+}
+
+.planet__button:last-child {
+  margin: 0;
+}
+
+.planet__button:hover {
+  background-color: rgba(216, 216, 216, .2);
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__button {
+    padding: 6px 0 0 18px;
+    font-size: 0.54rem;
+    width: 281px;
+    height: 40px;
+    margin: 0 0 16px;
+    letter-spacing: 1.93px;
+  }
+}
+

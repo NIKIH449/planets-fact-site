@@ -1,0 +1,9 @@
+.planet__button-number {
+  margin: 0 26px 0 0;
+}
+
+@media screen and (max-width: 1239px) {
+  .planet__button-number {
+    margin: 0 14px 0 0;
+  }
+}

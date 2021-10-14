@@ -1,0 +1,89 @@
+@import url(../vendor/normalize.css);
+
+/* HEADER */
+@import url(../blocks/page/page.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/header/__navigation/header__navigation.css);
+@import url(../blocks/header/__logo/header__logo.css);
+@import url(../blocks/header/__menu/header__menu.css);
+@import url(../blocks/header/__button-menu/_disabled/header__button-menu_disabled.css);
+@import url(../blocks/header/__menu-item/header__menu-item.css);
+@import url(../blocks/header/__menu-link/header__menu-link.css);
+@import url(../blocks/header/__button-menu/header__button-menu.css);
+@import url(../blocks/header/__menu-link/_active/header__menu-link_active.css);
+
+@import url(../blocks/planet/__box/planet__box.css);
+@import url(../blocks/planet/__buttons-mobile/planet__buttons-mobile.css);
+@import url(../blocks/planet/__button-mobile-link/planet__button-mobile-link.css);
+@import url(../blocks/planet/__button-mobile-link/_active/planet__button-mobile-link_active.css);
+@import url(../blocks/planet/__button-mobile/planet__button-mobile.css);
+@import url(../blocks/planet/__container/planet__container.css);
+@import url(../blocks/planet/__general/planet__general.css);
+@import url(../blocks/planet/__info/planet__info.css);
+@import url(../blocks/planet/__picture/planet__picture.css);
+@import url(../blocks/planet/__pictures/planet__pictures.css);
+@import url(../blocks/planet/__picture/_geology/planet__picture_type_geology.css);
+@import url(../blocks/planet/__picture/_geology/_active/planet__picture_type_geology_active.css);
+@import url(../blocks/planet/__button/planet__button.css);
+@import url(../blocks/planet/__button/_active/planet__button_active.css);
+@import url(../blocks/planet/__buttons/planet__buttons.css);
+@import url(../blocks/planet/__description/planet__description.css);
+@import url(../blocks/planet/__button-name/planet__button-name.css);
+@import url(../blocks/planet/__button-number/planet__button-number.css);
+@import url(../blocks/planet/__fact-info/planet__fact-info.css);
+@import url(../blocks/planet/__facts/planet__facts.css);
+@import url(../blocks/planet/__fact/planet__fact.css);
+@import url(../blocks/planet/__fact-name/planet__fact-name.css);
+@import url(../blocks/planet/__link/planet__link.css);
+@import url(../blocks/planet/__name/planet__name.css);
+@import url(../blocks/planet/__source/planet__source.css);
+@import url(../blocks/footer/footer.css);
+@import url(../blocks/footer/__copyright/footer__copyright.css);
+
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__list/popup__list.css);
+@import url(../blocks/popup/__item/popup__item.css);
+@import url(../blocks/popup/__item-container/popup__item-container.css);
+@import url(../blocks/popup/__item-name/popup__item-name.css);
+@import url(../blocks/popup/__item-icon/popup__item-icon.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_earth.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_jupiter.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_mars.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_mercury.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_neptune.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_saturn.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_uranus.css);
+@import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_venus.css);
+@import url(../blocks/popup/__item-arrow/popup__item-arrow.css);
+@import url(../blocks/popup/_opened/popup_opened.css);
+
+
+@font-face {
+	font-family: "AntonioRegular";
+	src: url("../vendor/fonts/antonio/Antonio-Regular.ttf");
+}
+
+@font-face {
+	font-family: "AntonioLight";
+	src: url("../vendor/fonts/antonio/Antonio-Light.ttf");
+}
+
+@font-face {
+	font-family: "AntonioBold";
+	src: url("../vendor/fonts/antonio/Antonio-Bold.ttf");
+}
+
+@font-face {
+	font-family: "SpartanRegular";
+	src: url("../vendor/fonts/Spartan/Spartan-Regular.ttf");
+}
+
+@font-face {
+	font-family: "SpartanBold";
+	src: url("../vendor/fonts/Spartan/Spartan-Bold.ttf");
+}
+
+@font-face {
+	font-family: "SpartanRegular";
+	src: url("../vendor/fonts/Spartan/Spartan-Regular.ttf");
+}
