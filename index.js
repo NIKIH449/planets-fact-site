@@ -1,6 +1,5 @@
 const page = document.querySelector('.page')
 const container = page.querySelector('.planet')
-const planetBox = document.querySelector('.planet__box')
 const buttonVenus = page.querySelector('.header__menu-link_type_venus')
 const buttonMenuVenus = page.querySelector('.popup__item_type_venus')
 const buttonMercury = page.querySelector('.header__menu-link_type_mercury')
@@ -17,7 +16,6 @@ const buttonUranus = page.querySelector('.header__menu-link_type_uranus')
 const buttonMenuUranus = page.querySelector('.popup__item_type_uranus')
 const buttonNeptune = page.querySelector('.header__menu-link_type_neptune')
 const buttonMenuNeptune = page.querySelector('.popup__item_type_neptune')
-const planetTemplate = page.querySelector('.planet__template')
 const buttonMenu = page.querySelector('.header__button-menu')
 const popup = page.querySelector('.popup')
 
@@ -43,37 +41,6 @@ function getTemplate() {
   .cloneNode(true);
   return planet;
 };
-
-function addPlanet(planet) {
-  container.innerHTML = ''
-  container.append(planet)
-}
-function openMenu() {
-  popup.classList.add('popup_opened')
-  buttonMenu.classList.add('header__button-menu_disabled')
-  buttonMenu.addEventListener('click', closeMenu);
-}
-
-function closeMenu() {
-  popup.classList.remove('popup_opened')
-  buttonMenu.classList.remove('header__button-menu_disabled')
-  buttonMenu.removeEventListener('click', closeMenu);
-}
-
-function activateLink(link) {
-  document.querySelector('.header__menu-link_active').classList.remove('header__menu-link_active')
-  document.querySelector(link).classList.add('header__menu-link_active')
-}
-
-function activateMobileLink(link) {
-  document.querySelector('.planet__button-mobile-link_active').classList.remove('planet__button-mobile-link_active')
-  document.querySelector(link).classList.add('planet__button-mobile-link_active')
-}
-
-function activateButton(button) {
-  document.querySelector('.planet__button_active').classList.remove('planet__button_active')
-  document.querySelector(button).classList.add('planet__button_active')
-}
 
 function generatePlanet(arr) {
   this._planet = getTemplate()
@@ -115,6 +82,37 @@ function generatePlanet(arr) {
     addPlanet(this._planet)
 }
 generatePlanet(0)
+
+function addPlanet(planet) {
+  container.innerHTML = ''
+  container.append(planet)
+}
+function openMenu() {
+  popup.classList.add('popup_opened')
+  buttonMenu.classList.add('header__button-menu_disabled')
+  buttonMenu.addEventListener('click', closeMenu);
+}
+
+function closeMenu() {
+  popup.classList.remove('popup_opened')
+  buttonMenu.classList.remove('header__button-menu_disabled')
+  buttonMenu.removeEventListener('click', closeMenu);
+}
+
+function activateLink(link) {
+  document.querySelector('.header__menu-link_active').classList.remove('header__menu-link_active')
+  document.querySelector(link).classList.add('header__menu-link_active')
+}
+
+function activateMobileLink(link) {
+  document.querySelector('.planet__button-mobile-link_active').classList.remove('planet__button-mobile-link_active')
+  document.querySelector(link).classList.add('planet__button-mobile-link_active')
+}
+
+function activateButton(button) {
+  document.querySelector('.planet__button_active').classList.remove('planet__button_active')
+  document.querySelector(button).classList.add('planet__button_active')
+}
 
 function getStructureData(arr) {
   getServerData(arr)
