@@ -15,5 +15,6 @@
 @media screen and (max-width: 786px) {
   .planet__pictures {
     margin-left: 62px;
+    padding: 0;
   }
 }
