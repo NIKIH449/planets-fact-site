@@ -34,15 +34,11 @@ function getServerData() {
 }
 
 function getTemplate() {
-  const planet = document
-  .querySelector('.planet__template')
-  .content
-  .querySelector('.planet__box')
-  .cloneNode(true);
+  const planet = document.querySelector('.planet__template').content.querySelector('.planet__box').cloneNode(true);
   return planet;
 };
 
-function generatePlanet(arr) {
+function generatePlanet() {
   this._planet = getTemplate()
   this._planetPicture = this._planet.querySelector('.planet__picture')
   this._planetPictureStructure = this._planet.querySelector('.planet__picture_type_structure')
@@ -61,31 +57,45 @@ function generatePlanet(arr) {
   this._buttonMobileOverview = this._planet.querySelector('.planet__button-mobile-link_type_overview')
   this._buttonMobileStructure = this._planet.querySelector('.planet__button-mobile-link_type_structure')
   this._buttonMobileSurface = this._planet.querySelector('.planet__button-mobile-link_type_surface')
-
-  getServerData(arr)
-    .then(res => {
-      this._planetName.textContent = res[arr].name.toUpperCase(),
-      this._planetPictureGeology.src = res[arr].images.geology,
-      this._planetDescription.textContent = res[arr].overview.content,
-      this._planetPictureStructure.src = res[arr].images.internal,
-      this._planetLink.href = res[arr].overview.source,
-      this._planetPicture.src = res[arr].images.planet,
-      this._planetRotationValue.textContent = res[arr].rotation,
-      this._planetRevolutionValue.textContent = res[arr].revolution,
-      this._planetRadiusValue.textContent = res[arr].radius,
-      this._planetTempValue.textContent = res[arr].temperature
-    })
-    .catch((err) => {
-      console.log(`Ошибка: ${err}`)
-    })
-    setEventListeners(arr)
-    addPlanet(this._planet)
+  return this._planet
 }
-generatePlanet(0)
+
+function createPlanet(arr) {
+  getServerData()
+  .then(data => {
+    const planet = generatePlanet()
+    this._planetName.textContent = data[arr].name.toUpperCase(),
+    this._planetPictureStructure.src = data[arr].images.internal,
+    this._planetPicture.src = data[arr].images.planet,
+    this._planetPicture.alt = data[arr].name,
+    this._planetPictureGeology.src = data[arr].images.geology,
+    this._planetPictureGeology.alt = data[arr].name,
+    this._planetDescription.textContent = data[arr].overview.content,
+    this._planetLink.href = data[arr].overview.source,
+    this._planetRotationValue.textContent = data[arr].rotation,
+    this._planetRevolutionValue.textContent = data[arr].revolution,
+    this._planetRadiusValue.textContent = data[arr].radius,
+    this._planetTempValue.textContent = data[arr].temperature
+    setEventListeners(arr)
+    removePlanet()
+    addPlanet(planet)
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`)
+  })
+}
+createPlanet(0)
 
 function addPlanet(planet) {
-  container.innerHTML = ''
   container.append(planet)
+}
+
+function removePlanet() {
+  container.innerHTML = ''
+}
+
+function removeSurface() {
+  this._planetPictureGeology.classList.remove('planet__picture_type_geology_active')
 }
 
 function openMenu() {
@@ -106,31 +116,40 @@ function activateElement(element, elementActive) {
 }
 
 function getStructureData(arr) {
-  getServerData(arr)
-  .then(res => {
-    this._planetPictureGeology.classList.remove('planet__picture_type_geology_active')
-    this._planetDescription.textContent = res[arr].structure.content,
-    this._planetPictureStructure.src = res[arr].images.internal,
-    this._planetLink.href = res[arr].structure.source
+  getServerData()
+  .then(data => {
+    removeSurface()
+    this._planetDescription.textContent = data[arr].structure.content,
+    this._planetPictureStructure.src = data[arr].images.internal,
+    this._planetLink.href = data[arr].structure.source
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`)
   })
 }
 
 function getOverviewData(arr) {
-  getServerData(arr)
-    .then(res => {
-      this._planetPictureGeology.classList.remove('planet__picture_type_geology_active')
-      this._planetDescription.textContent = res[arr].overview.content,
-      this._planetPicture.src = res[arr].images.planet,
-      this._planetLink.href = res[arr].overview.source
+  getServerData()
+    .then(data => {
+      removeSurface()
+      this._planetDescription.textContent = data[arr].overview.content,
+      this._planetPicture.src = data[arr].images.planet,
+      this._planetLink.href = data[arr].overview.source
+    })
+    .catch((err) => {
+      console.log(`Error: ${err}`)
     })
 }
 
 function getSurfaceData(arr) {
-  getServerData(arr)
-  .then(res => {
-    this._planetDescription.textContent = res[arr].geology.content,
+  getServerData()
+  .then(data => {
+    this._planetDescription.textContent = data[arr].geology.content,
     this._planetPictureGeology.classList.add('planet__picture_type_geology_active')
-    this._planetLink.href = res[arr].geology.source
+    this._planetLink.href = data[arr].geology.source
+  })
+  .catch((err) => {
+    console.log(`Error: ${err}`)
   })
 }
 
@@ -162,7 +181,7 @@ function setEventListeners(arr) {
 }
 
 function showPlanet(arr, planet) {
-  generatePlanet(arr)
+  createPlanet(arr)
   activateElement(`.header__menu-link_type_${planet}`, 'header__menu-link_active')
 }
 

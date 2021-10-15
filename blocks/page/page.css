@@ -1,5 +1,6 @@
 .page {
   width: 100%;
+  min-height: 100vh;
   background-color: #070724;
   background-image: url(../../images/background-stars.svg);
   -moz-osx-font-smoothing: grayscale;
@@ -7,10 +8,4 @@
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
-}
-
-@media screen and (max-width: 786px) {
-  .page {
-    max-height: 929px;
-  }
 }
