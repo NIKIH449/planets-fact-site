@@ -3,11 +3,11 @@
   padding: 33px 0 0 0;
   list-style: none;
   font-family: SpartanBold;
-  font-size: 0.7rem;
+  font-size: .7rem;
   line-height: 1.6rem;
   display: flex;
   opacity: .75;
-  letter-spacing: 0.9px;
+  letter-spacing: .9px;
 }
 
 @media screen and (max-width: 1239px) {

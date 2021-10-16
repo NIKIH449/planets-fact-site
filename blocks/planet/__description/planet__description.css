@@ -1,7 +1,7 @@
 .planet__description {
   width: 350px;
   font-family: SpartanRegular;
-  font-size: 0.875rem;
+  font-size: .875rem;
   line-height: 1.56rem;
   color: #FFFFFF;
   margin: 0 0 24px 0;
@@ -10,7 +10,7 @@
 
 @media screen and (max-width: 1239px) {
   .planet__description {
-    font-size: 0.68rem;
+    font-size: .68rem;
     line-height: 1.37rem;
     width: 339px;
     margin: 0 0 33px 0;

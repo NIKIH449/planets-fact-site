@@ -1,5 +1,5 @@
 .header__button-menu_disabled {
   opacity: .5;
   transform: rotate(90deg);
-  transition: 0.5 linear;
+  transition: .5 linear;
 }

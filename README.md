@@ -2,8 +2,8 @@
 
 ![Design preview for the Planets fact site coding challenge](./images/preview.jpg)
 
-## Welcome! 👋
+# Welcome! 👋
 
-# PLANET FACTS
+## PLANET FACTS
 
 #### [GitHub Pages](https://nikih449.github.io/planets-fact-site/)
