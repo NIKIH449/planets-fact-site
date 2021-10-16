@@ -4,4 +4,6 @@
 
 ## Welcome! 👋
 
-**Have fun building!** 🚀
+# PLANET FACTS
+
+#### [GitHub Pages](https://nikih449.github.io/planets-fact-site/)
