@@ -9,3 +9,10 @@
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
 }
+
+
+@media screen and (max-width: 786px) {
+  .page {
+    max-height: 943px;
+  }
+}
