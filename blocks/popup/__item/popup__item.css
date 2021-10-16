@@ -4,13 +4,13 @@
     justify-content: space-between;
     align-items: center;
     height: 65px;
-    border-top: 1px solid rgba(255,255,255, 0.2);
-    border-bottom: 1px solid rgba(255,255,255, 0.2);
+    border-bottom: 2px solid rgba(255,255,255, 0.2);
     padding: 0 32px 0 24px;
     cursor: pointer;
   }
 }
 
 .popup__item:first-child {
-  padding-top: 24px;
+  border-top: 2px solid rgba(255,255,255, 0.2);
+  padding-top: 0;
 }
