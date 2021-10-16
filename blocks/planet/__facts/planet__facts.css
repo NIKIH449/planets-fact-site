@@ -16,8 +16,8 @@
 
 @media screen and (max-width: 786px) {
   .planet__facts {
-    max-width: 375px;
+    max-width: 329px;
     flex-direction: column;
-    padding-left: 24px;
+    padding-left: 0;
   }
 }
