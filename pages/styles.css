@@ -1,5 +1,6 @@
 @import url(../vendor/normalize.css);
 @import url(../blocks/page/page.css);
+
 /* HEADER */
 @import url(../blocks/header/header.css);
 @import url(../blocks/header/__navigation/header__navigation.css);
@@ -10,7 +11,6 @@
 @import url(../blocks/header/__menu-link/header__menu-link.css);
 @import url(../blocks/header/__button-menu/header__button-menu.css);
 @import url(../blocks/header/__menu-link/_active/header__menu-link_active.css);
-
 
 /* PLANET */
 @import url(../blocks/planet/__box/planet__box.css);
@@ -40,9 +40,9 @@
 @import url(../blocks/planet/__source/planet__source.css);
 
 /* FOOTER */
+
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);
-
 
 /*POPUP*/
 @import url(../blocks/popup/popup.css);
@@ -59,6 +59,7 @@
 @import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_saturn.css);
 @import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_uranus.css);
 @import url(../blocks/popup/__item-icon/_type/popup__item-icon_type_venus.css);
+
 @import url(../blocks/popup/__item-arrow/popup__item-arrow.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 

@@ -1,5 +1,6 @@
 const page = document.querySelector('.page')
 const container = page.querySelector('.planet')
+const buttonsPlanets = page.querySelectorAll('.header__menu-link')
 const buttonVenus = page.querySelector('.header__menu-link_type_venus')
 const buttonMenuVenus = page.querySelector('.popup__item_type_venus')
 const buttonMercury = page.querySelector('.header__menu-link_type_mercury')
@@ -53,17 +54,18 @@ function generatePlanet() {
   this._buttonOverview = this._planet.querySelector('.planet__button_type_overview')
   this._buttonStructure = this._planet.querySelector('.planet__button_type_structure')
   this._buttonSurface = this._planet.querySelector('.planet__button_type_surface')
-  this._planetButton = this._planet.querySelector('.planet__button')
   this._buttonMobileOverview = this._planet.querySelector('.planet__button-mobile-link_type_overview')
   this._buttonMobileStructure = this._planet.querySelector('.planet__button-mobile-link_type_structure')
   this._buttonMobileSurface = this._planet.querySelector('.planet__button-mobile-link_type_surface')
   return this._planet
 }
 
-function createPlanet(arr) {
+function createPlanet(arr, planetColor) {
   getServerData()
   .then(data => {
     const planet = generatePlanet()
+    this._buttonOverview.style.background = planetColor;
+    this._buttonMobileOverview.style.borderBottom = `4px solid ${planetColor}`
     this._planetName.textContent = data[arr].name.toUpperCase(),
     this._planetPictureStructure.src = data[arr].images.internal,
     this._planetPicture.src = data[arr].images.planet,
@@ -76,7 +78,7 @@ function createPlanet(arr) {
     this._planetRevolutionValue.textContent = data[arr].revolution,
     this._planetRadiusValue.textContent = data[arr].radius,
     this._planetTempValue.textContent = data[arr].temperature
-    setEventListeners(arr)
+    setEventListeners(arr, planetColor)
     removePlanet()
     addPlanet(planet)
   })
@@ -84,7 +86,7 @@ function createPlanet(arr) {
     console.log(`Error: ${err}`)
   })
 }
-createPlanet(0)
+showPlanet(0, '#419EBB')
 
 function addPlanet(planet) {
   container.append(planet)
@@ -110,9 +112,33 @@ function closeMenu() {
   buttonMenu.removeEventListener('click', closeMenu);
 }
 
-function activateElement(element, elementActive) {
-  document.querySelector(`.${elementActive}`).classList.remove(elementActive)
-  document.querySelector(element).classList.add(elementActive)
+function activateElement(element, planetColor) {
+  const buttonsInfo = document.querySelectorAll('.planet__button')
+  buttonsInfo.forEach(button => {
+    if (button.hasAttribute('style')) {
+      button.style.background = 'none'
+    }
+  })
+  element.style.background = planetColor
+}
+
+function activateMobileElement(element, planetColor) {
+  const buttonsInfo = document.querySelectorAll('.planet__button-mobile-link')
+  buttonsInfo.forEach(button => {
+    if (button.hasAttribute('style')) {
+      button.style.border = 'none'
+    }
+  })
+  element.style.borderBottom  = `4px solid ${planetColor}`
+}
+
+function activatePlanetButton(button, color) {
+  buttonsPlanets.forEach(button => {
+    if (button.hasAttribute('style')) {
+      button.style.border = "none"
+    }
+  })
+  button.style.borderBottom = `4px solid ${color}`
 }
 
 function getStructureData(arr) {
@@ -153,108 +179,115 @@ function getSurfaceData(arr) {
   })
 }
 
-function setEventListeners(arr) {
+function setEventListeners(arr, planetColor) {
   this._buttonMobileStructure.addEventListener('click', () => {
     getStructureData(arr)
-    activateElement('.planet__button-mobile-link_type_structure', 'planet__button-mobile-link_active')
+    activateMobileElement(this._buttonMobileStructure, planetColor)
   })
   this._buttonStructure.addEventListener('click', () => {
     getStructureData(arr)
-    activateElement('.planet__button_type_structure', 'planet__button_active')
+    activateElement(this._buttonStructure, planetColor)
   })
   this._buttonOverview.addEventListener('click', () => {
     getOverviewData(arr)
-    activateElement('.planet__button_type_overview', 'planet__button_active')
+    activateElement(this._buttonOverview, planetColor)
   })
   this._buttonMobileOverview.addEventListener('click', () => {
     getOverviewData(arr)
-    activateElement('.planet__button-mobile-link_type_overview', 'planet__button-mobile-link_active')
+    activateMobileElement(this._buttonMobileOverview, planetColor)
   })
   this._buttonSurface.addEventListener('click', () => {
     getSurfaceData(arr)
-    activateElement('.planet__button_type_surface', 'planet__button_active')
+    activateElement(this._buttonSurface, planetColor)
   })
   this._buttonMobileSurface.addEventListener('click', () => {
     getSurfaceData(arr)
-    activateElement('.planet__button-mobile-link_type_surface', 'planet__button-mobile-link_active')
+    activateMobileElement(this._buttonMobileSurface, planetColor)
   })
 }
 
-function showPlanet(arr, planet) {
-  createPlanet(arr)
-  activateElement(`.header__menu-link_type_${planet}`, 'header__menu-link_active')
+function showPlanet(arr, planetColor) {
+  createPlanet(arr, planetColor)
 }
 
 buttonMenu.addEventListener('click', openMenu)
 
 buttonMenuMercury.addEventListener('click', () => {
-  showPlanet(0, 'mercury')
+  showPlanet(0, '#419EBB')
   closeMenu()
 })
 
 buttonMercury.addEventListener('click', () => {
-  showPlanet(0, 'mercury')
+  showPlanet(0, '#419EBB')
+  activatePlanetButton(buttonMercury, '#419EBB')
 })
 
 buttonMenuVenus.addEventListener('click', () => {
-  showPlanet(1, 'venus')
+  showPlanet(1, '#EDA249')
   closeMenu()
 })
 
 buttonVenus.addEventListener('click', () => {
-  showPlanet(1, 'venus')
+  showPlanet(1, '#EDA249')
+  activatePlanetButton(buttonVenus, '#EDA249')
 })
 
 buttonMenuEarth.addEventListener('click', () => {
-  showPlanet(2, 'earth')
+  showPlanet(2, '#6D2ED5')
   closeMenu()
 })
 
 buttonEarth.addEventListener('click', () => {
-  showPlanet(2, 'earth')
+  showPlanet(2, '#6D2ED5')
+  activatePlanetButton(buttonEarth, '#6D2ED5')
 })
 
 buttonMenuMars.addEventListener('click', () => {
-  showPlanet(3, 'mars')
+  showPlanet(3, '#D14C32')
   closeMenu()
 })
 
 buttonMars.addEventListener('click', () => {
-  showPlanet(3, 'mars')
+  showPlanet(3, '#D14C32')
+  activatePlanetButton(buttonMars, '#D14C32')
 })
 
 buttonMenuJupiter.addEventListener('click', () => {
-  showPlanet(4, 'jupiter')
+  showPlanet(4, '#D83A34')
   closeMenu()
 })
 
 buttonJupiter.addEventListener('click', () => {
-  showPlanet(4, 'jupiter')
+  showPlanet(4, '#D83A34')
+  activatePlanetButton(buttonJupiter, '#D83A34')
 })
 
 buttonMenuSaturn.addEventListener('click', () => {
-  showPlanet(5, 'saturn')
+  showPlanet(5, '#FCCB6B')
   closeMenu()
 })
 
 buttonSaturn.addEventListener('click', () => {
-  showPlanet(5, 'saturn')
+  showPlanet(5, '#FCCB6B')
+  activatePlanetButton(buttonSaturn, '#FCCB6B')
 })
 
 buttonMenuUranus.addEventListener('click', () => {
-  showPlanet(6, 'uranus')
+  showPlanet(6, '#65F0D5')
   closeMenu()
 })
 
 buttonUranus.addEventListener('click', () => {
-  showPlanet(6, 'uranus')
+  showPlanet(6, '#65F0D5')
+  activatePlanetButton(buttonUranus, '#65F0D5')
 })
 
 buttonMenuNeptune.addEventListener('click', () => {
-  showPlanet(7, 'neptune')
+  showPlanet(7, '#497EFA')
   closeMenu()
 })
 
 buttonNeptune.addEventListener('click', () => {
-  showPlanet(7, 'neptune')
+  showPlanet(7, '#497EFA')
+  activatePlanetButton(buttonNeptune, '#497EFA')
 })
