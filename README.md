@@ -1,4 +1,4 @@
-# MESTO
+# PLANET FACTS
 ![Иллюстрация к проекту](https://github.com/NIKIH449/planets-fact-site/raw/main/images/preview.jpg)
 
 ## Описание
@@ -14,17 +14,10 @@
 - JS
 - БЭМ
 - API
-- Webpack
 
 
 ### Инструкция по развёртыванию 
 
-#### npm start
-
-Запуск в режиме разработки. Откроется окно в браузере.
-
-#### npm run build
-
-Соберет проект в папку build.
+Используйте лайв-сервер для вашего IDE.
 
 #### [GitHub Pages](https://nikih449.github.io/planets-fact-site/)
